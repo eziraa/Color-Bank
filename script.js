@@ -14,7 +14,7 @@ const generateColor = function () {
 };
 const displayColor = function () {
   // declare MAX NUMBER OF COLORS
-  const NUMBER_OF_COLORS = 100;
+  const NUMBER_OF_COLORS = 1000;
 
   // GET array of colora
   const colors = Array.from(
@@ -37,9 +37,9 @@ const displayColor = function () {
 displayColor();
 
 const copyToClipBoard = function (e) {
-  const colorHexValue = document.querySelector(".color-hex");
-
   if (e.target.classList.contains("btn-copy")) {
+    const colorHexValue = e.target.parentElement.querySelector(".color-hex");
+
     const textToBeCopied = colorHexValue?.textContent;
     navigator.clipboard.writeText(textToBeCopied);
     alert(`${colorHexValue.textContent} copied`);

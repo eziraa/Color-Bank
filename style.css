@@ -10,6 +10,7 @@ body {
     text-align: center;
     background-repeat: no-repeat;
     background-size: contain;
+    color: #B43F70;
 }
 
 .title {
@@ -48,6 +49,7 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
     }
     
     .btn:active {
