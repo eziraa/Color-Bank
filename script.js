@@ -21,5 +21,18 @@ const copyToClipBoard = function (e) {
   }
 };
 
+const displayColor = function () {
+  // declare MAX NUMBER OF COLORS
+  const NUMBER_OF_COLORS = 100;
+
+  // GET array of colora
+  const colors = Array.from(
+    {
+      length: NUMBER_OF_COLORS,
+    },
+    () => generateColor()
+  );
+};
+
 colorContainer.addEventListener("click", copyToClipBoard);
 
