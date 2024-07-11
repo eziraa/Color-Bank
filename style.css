@@ -80,7 +80,7 @@ body {
 
 .toast{
     border-radius: 0.4rem;
-    background-color: #3e3d3d;
+    background-color: #1b1b1b;
     padding: 0.8rem 1rem;
     font-weight: 300;
     letter-spacing: 1px;
@@ -89,6 +89,7 @@ body {
     transform: translateX(-50%);
     top: 1rem;
     z-index: 4;
+    color: #1cef00;
 }
 
 
