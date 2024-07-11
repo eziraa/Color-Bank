@@ -74,11 +74,14 @@ var sortedColors = sortColorsByHue(randomColors);
 
 const colorContainer = document.querySelector(".color-container");
 const btnCopy = document.querySelector(".color-item");
+const toast = document.querySelector(".toast");
+const color_name = document.querySelector(".color");
 
 const displayColor = function () {
- 
   sortedColors.forEach((color) => {
-    const html = `<div class="color-item" style="background-color:rgb(${color.r}, ${color.g}, ${color.b})">
+    const html = `<div class="color-item" style="background-color:rgb(${
+      color.r
+    }, ${color.g}, ${color.b})">
             <h3 class="color-hex" >${rgbToHex(color.r, color.g, color.b)}</h3>
             <button class="btn btn-copy"></button>
         </div>`;
@@ -94,7 +97,13 @@ const copyToClipBoard = function (e) {
     const colorHexValue = e.target.parentElement.querySelector(".color-hex");
     const textToBeCopied = colorHexValue?.textContent;
     navigator.clipboard.writeText(textToBeCopied);
-    alert(`${colorHexValue.textContent} copied`);
+    toast.classList.remove("hidden");
+    color_name.textContent = colorHexValue?.textContent;
+    setTimeout(() => {
+      toast.classList.add("hidden");
+    }, 3000);
+
+    // alert(`${colorHexValue.textContent} copied`);
   }
 };
 
